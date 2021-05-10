@@ -1,0 +1,371 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  :root {
+    --primary-font-color: white;
+    --primary-button-color: grey;
+  }
+  
+  /*
+  Buttons
+  */
+  .btn {
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border: none;
+    display: inline-flex; /*arrange elements horizontally*/
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  
+  .Secondary-button {
+    background-color: var(--primary-font-color);
+    color: var(--primary-button-color);
+    border: 1px solid grey;
+  }
+  .Secondary-button:hover {
+    background-color: var(--primary-font-color);
+    color: var(--primary-button-color);
+  }
+  
+  .Primary-button {
+    background-color: var(--primary-button-color);
+    color: var(--primary-font-color);
+  }
+  
+  .price {
+    margin: 2rem;
+    font: outline;
+    font-size: large;
+  }
+  
+  .img {
+    height: 20vh;
+    width: 10rem;
+    padding-top: 4rem;
+  }
+  
+  .Navigation-container {
+    background-color: var(--primary-button-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    max-width: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    align-items: center;
+    height: 3rem;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+  }
+  
+  .Navigation-header {
+    color: var(--primary-font-color);
+    font-size: 2rem;
+    font-style: bold;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    list-style: none;
+  }
+  
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  
+  .link {
+    border-radius: 0.2rem;
+    margin: 1rem;
+    color: black;
+  }
+  
+  .icon-badge {
+    border-radius: 50%;
+    border: none;
+    position: absolute; /*will set position absolute to parent badge-container*/
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    top: 0rem;
+    right: 0rem;
+  }
+  
+  .wishlist-height
+  {
+    height:2rem;
+  }
+  
+  .cart,
+  .heart {
+    padding-top: 0.4rem;
+    width: 3rem;
+    border: none;
+    position: relative;
+  }
+  .border-div {
+    border: 1px solid white;
+    height: 20rem;
+    width: 17rem;
+    padding: 1rem 2rem;
+    margin-block-end: 1rem;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    vertical-align: middle;
+    align-items: center;
+    margin: auto;
+    position: relative;
+  }
+  .icon-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+  }
+  
+  .flexing {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .remove_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
+  .badge-color {
+    color: black;
+    background-color: white;
+  }
+  
+  .Card {
+    border: 1px solid gray;
+    padding: 2.5rem 2rem;
+    border-radius: 0.4rem;
+    margin: 3rem;
+    position: relative;
+  }
+  .heading {
+    position: absolute;
+    top: 0px;
+  }
+  
+  .mid-width-card {
+    height: 15rem;
+    width: 20rem;
+  }
+  
+  .shadow {
+    box-shadow: 10px 10px 15px;
+  }
+  
+  .fieldset {
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  :root {
+    --primary-font-color: white;
+    --primary-button-color: grey;
+  }
+  
+  /*
+  Buttons
+  */
+  .btn {
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border: none;
+    display: inline-flex; /*arrange elements horizontally*/
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  
+  .Secondary-button {
+    background-color: var(--primary-font-color);
+    color: var(--primary-button-color);
+    border: 1px solid grey;
+  }
+  .Secondary-button:hover {
+    background-color: var(--primary-font-color);
+    color: var(--primary-button-color);
+  }
+  
+  .Primary-button {
+    background-color: var(--primary-button-color);
+    color: var(--primary-font-color);
+  }
+  
+  .price {
+    margin: 2rem;
+    font: outline;
+    font-size: large;
+  }
+  
+  .img {
+    height: 20vh;
+    width: 10rem;
+    padding-top: 4rem;
+  }
+  
+  .Navigation-container {
+    background-color: var(--primary-button-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    max-width: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    align-items: center;
+    height: 3rem;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+  }
+  
+  .Navigation-header {
+    color: var(--primary-font-color);
+    font-size: 2rem;
+    font-style: bold;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    list-style: none;
+  }
+  
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  
+  .link {
+    border-radius: 0.2rem;
+    margin: 1rem;
+    color: black;
+  }
+  
+  .icon-badge {
+    border-radius: 50%;
+    border: none;
+    position: absolute; /*will set position absolute to parent badge-container*/
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    top: 0rem;
+    right: 0rem;
+  }
+  
+  .wishlist-height
+  {
+    height:2rem;
+  }
+  
+  .cart,
+  .heart {
+    padding-top: 0.4rem;
+    width: 3rem;
+    border: none;
+    position: relative;
+  }
+  .border-div {
+    border: 1px solid white;
+    height: 20rem;
+    width: 17rem;
+    padding: 1rem 2rem;
+    margin-block-end: 1rem;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    vertical-align: middle;
+    align-items: center;
+    margin: auto;
+    position: relative;
+  }
+  .icon-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+  }
+  
+  .flexing {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .remove_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
+  .badge-color {
+    color: black;
+    background-color: white;
+  }
+  
+  .Card {
+    border: 1px solid gray;
+    padding: 2.5rem 2rem;
+    border-radius: 0.4rem;
+    margin: 3rem;
+    position: relative;
+  }
+  .heading {
+    position: absolute;
+    top: 0px;
+  }
+  
+  .mid-width-card {
+    height: 15rem;
+    width: 20rem;
+  }
+  
+  .shadow {
+    box-shadow: 10px 10px 15px;
+  }
+  
+  .fieldset {
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
+  
