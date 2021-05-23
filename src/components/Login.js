@@ -35,7 +35,7 @@ export const Login = () => {
         <input
           style={{ border: "none", borderBottom: "2px solid grey" }}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
+          placeholder="password" 
         />
         <div>
         <button onClick={loginHandler}>{login ? "Logout" : "Login"}</button>
