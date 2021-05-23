@@ -74,6 +74,12 @@
     font-size: 2rem;
     font-style: bold;
   }
+
+  .login-img {
+    height: 34px;
+    width: 34px;
+    border: none;
+  }
   .nav-links {
     display: flex;
     justify-content: flex-end;

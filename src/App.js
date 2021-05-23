@@ -4,15 +4,19 @@ import { Cart } from "./components/cart";
 import { WishList } from "./components/WishList";
 import { CartNavigation } from "./components/cartNavigation";
 import { Routes, Route } from "react-router-dom";
+import {PrivateAuth} from "./components/privateAuth";
+import { Login } from "./components/Login";
+
 
 export default function App() {
-  return (
+return (
     <div className="App">
       <CartNavigation />
       <Routes>
         <Route exact to="/" element={<ProductList />} />
-        <Route exact path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<WishList />} />
+        <PrivateAuth exact path="/cart" element={<Cart />} />
+        <PrivateAuth path="/wishlist" element={<WishList />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       {/*{route === "products" && <ProductList />}
         {route === "cart" && <Cart />}

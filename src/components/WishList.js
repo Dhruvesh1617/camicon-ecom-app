@@ -4,7 +4,7 @@ import { checkItem } from "../components/productList";
 export const WishList = () => {
   const { wishList, cartItems, dataDispatch } = useData();
   if (wishList.length === 0) {
-    return <h1>WishList is empty</h1>;
+    return <h1 style={{ marginTop: "5rem" }}>WishList is empty</h1>;
   }
   return (
     <>

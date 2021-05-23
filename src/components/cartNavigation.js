@@ -56,6 +56,16 @@ export const CartNavigation = () => {
                 <span class="icon-badge badge-color">{wishList.length}</span>
               </li>
             </Link>
+            <Link
+              style={{ color: "white" }}
+              className="text-decoration-none link"
+              to="/login"
+            >
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfxnDMDFeS00roEY5FQQgNkhFm9igKgHyUhaGxsQJtwSwM8dIQ064Fe25IbzVHZALWiB0&usqp=CAU"
+                class="login-img"
+              />
+            </Link>
           </ul>
         </div>
       </nav>
