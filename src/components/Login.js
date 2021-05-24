@@ -38,7 +38,7 @@ export const Login = () => {
           placeholder="password" 
         />
         <div>
-        <button onClick={loginHandler}>{login ? "Logout" : "Login"}</button>
+        <button onClick={loginHandler}>{login ? "Logout":"Login"}</button>
         </div>
       </div>
     </>
