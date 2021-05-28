@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { useAuth } from "../context/Authcontext";
 import { useState } from "react";
 
@@ -7,12 +7,9 @@ export const Login = () => {
   const [username, setUser] = useState("");
   const [password, setPassword] = useState("");
   const { state } = useLocation();
-  {/*const navigate = useNavigate();*/}
   console.log({ state });
   function loginHandler() {
    login?logOut():loginWithCredentials(username, password);
-    {/*// setlogin((login) => !login);
-    //navigate(state?.from ? state.from : "/wishlist");*/}
   }
   return (
     <>

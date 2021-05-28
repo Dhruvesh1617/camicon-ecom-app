@@ -64,7 +64,7 @@ export const CartNavigation = () => {
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfxnDMDFeS00roEY5FQQgNkhFm9igKgHyUhaGxsQJtwSwM8dIQ064Fe25IbzVHZALWiB0&usqp=CAU"
                 class="login-img"
-              />
+              alt="login-image"/>
             </Link>
           </ul>
         </div>
