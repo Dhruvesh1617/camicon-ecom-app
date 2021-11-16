@@ -1,5 +1,33 @@
-import faker from "faker";
-export const productDB = [
+//import faker from "faker";
+import axios from "axios"
+import { useEffect,useState} from "react";
+
+ export const useDataBase= () => {
+  const [productDB, setDB] = useState(null);
+  //let product=[...productDB];
+  //console.log("Product data is:",product)
+  useEffect(() => {
+    (async () => {
+      try{
+      const response= await axios.get("https://camicon-backend.herokuapp.com/products")
+          setDB(response.data.products);
+           console.log(response.data);
+        }
+        catch(error)
+        {
+          console.log(error);
+        }
+    })();
+  }, []);
+  return productDB;
+};
+
+
+
+
+
+
+{/*export const productDB = [
   {
     id: faker.random.uuid(),
     name: "Sony Alpha a6400 Mirrorless Digital Camera",
@@ -50,4 +78,4 @@ export const productDB = [
     qty: 1,
     fastDelivery: faker.random.boolean()
   }
-];
+];*/}

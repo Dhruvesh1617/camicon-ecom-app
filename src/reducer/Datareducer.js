@@ -1,7 +1,12 @@
 
-import {productDB  as productData} from "../Database/productDB"
+//import {productDB  as productData} from "../Database/productDB"
 export function reducer(state, action) {
+
+
   switch (action.type) {
+
+    case "SET_PRODUCT":
+      return{...state,productData:action.payload}
     case "ADD_TO_CART":
       return {
         ...state,
@@ -12,7 +17,7 @@ export function reducer(state, action) {
       return {
         ...state,
         cartItems: state.cartItems.map((itemdata) =>
-          itemdata.id === action.id
+          itemdata._id === action._id
             ? { ...itemdata, qty: itemdata.qty + 1 }
             : itemdata
         ),
@@ -22,16 +27,17 @@ export function reducer(state, action) {
       return {
         ...state,
         cartItems: state.cartItems.map((itemdata) =>
-          itemdata.id === action.id && itemdata.qty > 0
+        {
+         return itemdata._id === action._id 
             ? { ...itemdata, qty: itemdata.qty - 1 }
             : itemdata
-        )
+        })
       };
     case "REMOVE_FROM_CART":
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (itemdata) => itemdata.qty === 0 && itemdata.id !== action.id
+          (itemdata) =>  itemdata._id !== action._id
         )
       };
     case "ADD_TO_WISHLIST":
@@ -42,7 +48,7 @@ export function reducer(state, action) {
     case "REMOVE_FROM_WISHLIST":
       return {
         ...state,
-        wishList: state.wishList.filter((itemdata) => action.id !== itemdata.id)
+        wishList: state.wishList.filter((itemdata) => action._id !== itemdata._id)
       };
     case "WISHLIST_TO_CART":
       return { ...state, cartItems: state.cartItems.concat(action.payload) };
@@ -52,8 +58,10 @@ export function reducer(state, action) {
         state.productData.filter((item) => item.name.toLocaleLowerCase().includes(value))
       );
       return {
-        ...state,productData:productData.filter((item)=>item.name.toLocaleLowerCase().includes(value))
+        ...state,productData:state.productData.filter((item)=>item.name.toLocaleLowerCase().includes(value))
       };
+      // case "CLEAR_SEARCH":
+      //   return{...state,productData:action.payload}
     default:
       return state;
   }

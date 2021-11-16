@@ -11,20 +11,27 @@ export const WishList = () => {
       <h2>WishList</h2>
       <ul>
         {wishList.map((wishListItem) => (
-          <div className="border-div shadow flexing">
+          <div className="card-div wishlist-card shadow">
             <img
               className="img"
               src={wishListItem.image}
               alt="product-details"
             />
             <h3 className="heading">{wishListItem.name}</h3>
+            
             <p>Rs.{wishListItem.price}</p>
+            {wishListItem.inStock ? <div>in stock</div> : <div>out of stock</div>}
+              {wishListItem.fastDelivery ? (
+                <div>Fast Delivery</div>
+              ) : (
+                <div>5 days minimum</div>
+              )}
             <button
-              className="remove_button"
+              className="remove_button action-button sm"
               onClick={() =>
                 dataDispatch({
                   type: "REMOVE_FROM_WISHLIST",
-                  id: wishListItem.id
+                  _id: wishListItem._id
                 })
               }
             >
@@ -33,7 +40,7 @@ export const WishList = () => {
             <button
               className="btn Primary-button"
               onClick={() =>
-                !checkItem(cartItems, wishListItem.id)
+                !checkItem(cartItems, wishListItem._id)
                   ? dataDispatch({
                       type: "WISHLIST_TO_CART",
                       payload: wishListItem

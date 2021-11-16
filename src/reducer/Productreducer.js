@@ -15,10 +15,13 @@ export function productReducer(state, action) {
         return { ...state, showFastDelivery: !state.showFastDelivery };
       case "SORT_BY":
         return { ...state, sortBy: action.payload };
+      case "IS_BRAND":
+        return {...state,isBrand:action.payload};
       case "CLEAR":
         return {
           ...state,
           sortBy: null,
+          isBrand:null,
           showFastDelivery: false,
           showInventory: false
         };
