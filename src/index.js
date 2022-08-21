@@ -10,13 +10,13 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <Router>
-      <ProductDataProvider>
-        <DataProvider>
-          <AuthProvider>
+    <DataProvider>
+        <ProductDataProvider>
+        <AuthProvider>
           <App />
           </AuthProvider>
-        </DataProvider>
       </ProductDataProvider>
+      </DataProvider>
     </Router>
   </StrictMode>,
   rootElement

@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   async function loginWithCredentials(username, password) {
     try {
       const user = await fakeAuthAPI(username, password);
-      //console.log(user)
+      console.log(user)
       if (user.status === 200) {
         setlogin(true);
         localStorage?.setItem("logindata",JSON.stringify({isUserLoggedIn:true}))

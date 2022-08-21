@@ -10,31 +10,60 @@ body {
 }
 
 /*nav*/
-.links {
-  position: relative;
-  top: 8px;
+.Nav-Container
+{
+  
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    max-width: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    align-items: center;
+    height:2rem;
+    border-bottom:10px solid var(--primary-button-color);
+  }
+
+  .nav-link
+  {
+   border-radius: 0.2rem;
+    margin: 1rem;
+    color: var(--primary-font-color);
+  }
+  .Navigation-header
+{
+    color:Black;
+    padding-left:0.5rem;
+    padding-top:0.7rem;
+    font-size: 2rem;
+    font-style: bold;
+
+}
+.badge-color
+{
+  background-color:grey;
+  color:white;
 }
 
-.login-img {
-  height: 34px;
-  width: 34px;
-  border: none;
-  position:relative;
-  top:-2rem;
-}
 
-.color-link {
-  color: black;
+.color-link
+{
+    color: black;
 }
-
 .grey-text
 {
   color:grey;
 }
 
+.links {
+  position: relative;
+  top:18px;
+}
 .fixed {
   position: fixed;
-  z-index: 3;
+  z-index:2;
   top: 0;
 }
 
@@ -42,6 +71,13 @@ body {
   text-decoration: none;
 }
 
+
+
+.items-align
+{
+  display:flex;
+  justify-content: flex-end;
+}
 /*badge*/
 .badge-align {
   top: 0;
@@ -59,7 +95,7 @@ body {
   border: none;
   position: relative;
 }
-
+/*nav close*/
 /*
 Buttons
 */
@@ -119,18 +155,38 @@ Buttons
   margin: 1rem;
 }
 
+
+.loader
+{
+  position:relative;
+  right:25rem;
+  bottom:25rem;
+}
+
+.items-container
+{
+  max-width:900px;
+  margin:auto;
+}
+
 .Products-alignment
 {
+  
   display: flex;
+  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
 /*sidenav-start*/
+
+
 .side-nav-container
 {
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: flex-start;
+
 }
 
 .side-nav
@@ -141,8 +197,20 @@ Buttons
     overflow-x: auto;
    border: 2px solid rgba(128, 128, 128, 0.596);
   padding: 1rem 1rem ;
-}
+}**/
 
+
+/**.main-section{
+  position:relative;
+  margin-left:13rem;
+  margin-bottom:8rem;
+}**/
+.grd-container
+{
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content:space-evenly;
+}
 .mrgn-t
 {
   margin-top: 0rem;
@@ -170,6 +238,8 @@ Buttons
   display: flex;
   align-items: center;
 }
+
+
 
 .pd2-l-r {
   padding: 0 2rem;
@@ -227,8 +297,6 @@ Buttons
   position: absolute;
   bottom:2px;
 }
-
-
 
 .heading 
 {

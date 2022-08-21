@@ -1,67 +1,104 @@
 
 //import {productDB  as productData} from "../Database/productDB"
+export const data = {
+  productData:[],
+  cartItems: [],
+  wishList: [],
+  cartQuantity: 0,
+  searchedText:"",
+  user:{},
+  isAuthenticated:false,
+};
+
+
 export function reducer(state, action) {
 
 
   switch (action.type) {
 
-    case "SET_PRODUCT":
+    case "SET_PRODUCTS":
       return{...state,productData:action.payload}
+    case "LOAD_USER":
+      return{
+          ...state,
+          user:action.payload.user,
+          wishList:action.payload.user?.wishList,
+          cart:action.payload.user?.cart,
+          cartQuantity:action.payload.user?.cart?.products?.length,
+          isAuthenticated:true,
+
+      }
+    case "REGISTER_USER":
+      localStorage.setItem("token",action.payload.token)
+      localStorage.setItem("isAuthenticated",true)
+      return{
+        ...state,
+        user:action.payload.user,
+        isAuthenticated:true
+      }
+      case "LOGIN_USER":
+        localStorage.setItem("token",action.payload.token)
+        localStorage.setItem("isAuthenticated",true)
+        return{
+          ...state,
+          user:action.payload.user,
+          cartItems:action.payload.user?.cart,
+          wishList:action.payload.user?.wishList,
+          isAuthenticated:true
+        }
+      case "LOGOUT_USER":
+        localStorage.removeItem("token")
+        localStorage.removeItem("isAuthenticated")
+         return{
+           ...state,
+          user:{},
+          cartItems:[],
+          wishList:[],
+          isAuthenticated:false,
+          cartQuantity:0
+        }
     case "ADD_TO_CART":
       return {
         ...state,
-        cartItems: state.cartItems.concat(action.payload),
-        cartQuantity: state.cartQuantity + 1
+        cartItems:action.payload?.item
+        
       };
-    case "INCREMENT":
+    case "INCREMENT_OR_DECREMENT_ITEM":
       return {
         ...state,
-        cartItems: state.cartItems.map((itemdata) =>
-          itemdata._id === action._id
-            ? { ...itemdata, qty: itemdata.qty + 1 }
-            : itemdata
-        ),
-        cartQuantity: state.cartQuantity + 1
+        cartItems:action.payload?.item,
+        
       };
-    case "DECREMENT":
-      return {
-        ...state,
-        cartItems: state.cartItems.map((itemdata) =>
-        {
-         return itemdata._id === action._id 
-            ? { ...itemdata, qty: itemdata.qty - 1 }
-            : itemdata
-        })
-      };
+   
     case "REMOVE_FROM_CART":
       return {
         ...state,
-        cartItems: state.cartItems.filter(
-          (itemdata) =>  itemdata._id !== action._id
-        )
+        cartItems:action.payload?.item,
       };
     case "ADD_TO_WISHLIST":
       return {
         ...state,
-        wishList: state.wishList.concat(action.payload)
+        wishList:action.payload?.item
       };
     case "REMOVE_FROM_WISHLIST":
       return {
         ...state,
-        wishList: state.wishList.filter((itemdata) => action._id !== itemdata._id)
+        wishList:action.payload?.item
       };
     case "WISHLIST_TO_CART":
       return { ...state, cartItems: state.cartItems.concat(action.payload) };
+
     case "SEARCH":
-      let value = action.payload.target.value.toLocaleLowerCase();
-      console.log(
-        state.productData.filter((item) => item.name.toLocaleLowerCase().includes(value))
-      );
-      return {
-        ...state,productData:state.productData.filter((item)=>item.name.toLocaleLowerCase().includes(value))
-      };
-      // case "CLEAR_SEARCH":
-      //   return{...state,productData:action.payload}
+      return {...state,searchedText:action.payload}
+    // case "SEARCH":
+    //   let value = action.payload.target.value.toLocaleLowerCase();
+    //   console.log(
+    //     state.productData.filter((item) => item.name.toLocaleLowerCase().includes(value))
+    //   );
+    //   return {
+    //     ...state,productData:state.productData.filter((item)=>item.name.toLocaleLowerCase().includes(value))
+    //   };
+     
     default:
       return state;
   }

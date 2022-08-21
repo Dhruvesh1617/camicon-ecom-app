@@ -1,16 +1,16 @@
 import { useData } from "../context/Datacontext";
-import { checkItem } from "../components/productList";
+import { checkItem } from "../customhooks/customHooks";
 
 export const WishList = () => {
   const { wishList, cartItems, dataDispatch } = useData();
-  if (wishList.length === 0) {
+  if (wishList?.products?.length === 0) {
     return <h1 style={{ marginTop: "5rem" }}>WishList is empty</h1>;
   }
   return (
     <>
       <h2>WishList</h2>
       <ul>
-        {wishList.map((wishListItem) => (
+        {wishList?.products.map((wishListItem) => (
           <div className="card-div wishlist-card shadow">
             <img
               className="img"
@@ -40,7 +40,7 @@ export const WishList = () => {
             <button
               className="btn Primary-button"
               onClick={() =>
-                !checkItem(cartItems, wishListItem._id)
+                !checkItem(cartItems?.products, wishListItem._id)
                   ? dataDispatch({
                       type: "WISHLIST_TO_CART",
                       payload: wishListItem

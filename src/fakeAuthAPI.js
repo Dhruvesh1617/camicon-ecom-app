@@ -19,7 +19,7 @@ const users = [
   
   export const fakeAuthAPI = (username, password) => {
     const user = findUser(username);
-    console.log(user);
+    console.log(user.password);
     return new Promise((res, rej) => {
       setTimeout(() => {
         if (user.password === password) {
@@ -27,7 +27,7 @@ const users = [
         } else {
           rej({ success: false, status: 401 });
         }
-      }, 3000);
+      }, 2000);
     });
   };
   
