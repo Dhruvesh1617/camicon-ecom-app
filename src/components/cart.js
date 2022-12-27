@@ -15,7 +15,7 @@ export function Cart() {
       <h3>
         <strong>Cart</strong>
       </h3>
-      {cartItems?.products.map((productItem) => (
+      {cartItems?.products?.map((productItem) => (
         <ProductDescription productItem={productItem}  />
       ))}
       <div className="price">Total price is {totalAmount}</div>
