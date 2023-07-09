@@ -2,7 +2,7 @@ import {useData} from "../context/Datacontext";
 import {useProductData} from "../context/Productcontext";
 //import { productDB } from "../DataBase/productDB";
 import {useEffect,useState} from "react";
-import {useDataBase} from "../Database/productDB";
+
 import {Filter} from "../components/Filter";
 import {useSortedData,useFilteredData,useBrandSort} from "../customhooks/customHooks";
 import { Card} from "../components/Card";
@@ -41,7 +41,7 @@ export const ProductList = () => {
       console.log(searchedItem)
       setSearchedData(searchedItem)
       return () => setSearchedData([])
-    }, [searchedText])
+    }, [searchedText,filteredData])
 
 
     console.log(filteredData);

@@ -166,14 +166,16 @@ Buttons
 .items-container
 {
   max-width:900px;
-  margin:auto;
+  margin: auto;
+
+
 }
 
 .Products-alignment
 {
   
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }

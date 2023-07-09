@@ -9,7 +9,6 @@ import {
   reducer,
   data
 } from "../reducer/Datareducer";
-import { Cart } from "../components/cart";
 // import {productDB as productData} from "../Database/productDB";
 // import {useDataBase} from "../Database/productDB";
 //const {ECOM_APP_BEURL}=process.env;
@@ -54,7 +53,7 @@ export function DataProvider({
     try {
       const {
         data: productData
-      } = await axios.get("http://localhost:3020/products")
+      } = await axios.get("http://localhost:4000/products")
       //console.log(productData)
       dataDispatch({
         type: "SET_PRODUCTS",
@@ -72,7 +71,7 @@ export function DataProvider({
 				autoClose: 2000,
 				hideProgressBar: true,
 			});
-      const res = await axios.post("http://localhost:3020/users/register", {
+      const res = await axios.post("http://localhost:4000/users/register", {
         name,
         email,
         password
@@ -108,7 +107,7 @@ export function DataProvider({
     try {
       const {
         data
-      } = await axios.post("http://localhost:3020/users/login", {
+      } = await axios.post("http://localhost:4000/users/login", {
         email,
         password
       })
@@ -142,7 +141,7 @@ export function DataProvider({
     try {
       const {
         data
-      } = await axios.get("http://localhost:3020/users",tokenConfig())
+      } = await axios.get("http://localhost:4000/users",tokenConfig())
       dataDispatch({
         type: "LOAD_USER",
         payload: data
@@ -154,7 +153,7 @@ export function DataProvider({
 
   const addToCart=async (userId,product)=>{
     try{
-        const {data}=await axios.post(`http://localhost:3020/users/${userId}/cart`,{userId,product},tokenConfig())
+        const {data}=await axios.post(`http://localhost:4000/users/${userId}/cart`,{userId,product},tokenConfig())
         toast.success(data.message,{
           position: "top-right",
           style: { backgroundColor: "grey",color:"white"},
@@ -178,7 +177,7 @@ export function DataProvider({
 
   const incrementCartQuantity=async (cartId,productId,userId)=>{
     try{
-         const {data}= await axios.post(`http://localhost:3020/users/${userId}/cart/update`,{cartId,productId,operation:"increment"},tokenConfig())
+         const {data}= await axios.post(`http://localhost:4000/users/${userId}/cart/update`,{cartId,productId,operation:"increment"},tokenConfig())
          toast.success(data.message,{
           position: "top-right",
           style: { backgroundColor: "grey",color:"white"},
@@ -200,7 +199,7 @@ export function DataProvider({
   }
   const decrementCartQuantity=async (cartId,productId,userId)=>{
     try{
-          const {data}=await axios.post(`http://localhost:3020/users/${userId}/cart/update`,{cartId,productId,operation:"decrement"},tokenConfig())
+          const {data}=await axios.post(`http://localhost:4000/users/${userId}/cart/update`,{cartId,productId,operation:"decrement"},tokenConfig())
           toast.success(data.message,{
             position: "top-right",
             style: { backgroundColor: "grey",color:"white"},
@@ -225,7 +224,7 @@ export function DataProvider({
   {
         try
         {
-            const {data}=await axios.post(`http://localhost:3020/users/${userId}/cart/remove`,{userId,productId},tokenConfig())
+            const {data}=await axios.post(`http://localhost:4000/users/${userId}/cart/remove`,{userId,productId},tokenConfig())
             toast.success(data.message,{
               position: "top-right",
               style: { backgroundColor: "grey",color:"white"},
@@ -250,7 +249,7 @@ export function DataProvider({
   const addToWishlist=async (userId,product)=>
   {
       try{
-           const {data}=await axios.post(`http://localhost:3020/users/${userId}/wishlist`,{userId,product},tokenConfig())
+           const {data}=await axios.post(`http://localhost:4000/users/${userId}/wishlist`,{userId,product},tokenConfig())
            toast.success(data.message,{
             position: "top-right",
             style: { backgroundColor: "grey",color:"white"},
@@ -276,7 +275,7 @@ export function DataProvider({
   const  removeFromWishlist=async (userId,product)=>
   {
     try{
-       const {data}=await axios.post(`http://localhost:3020/users/${userId}/wishlist/remove`,{userId,product},tokenConfig())
+       const {data}=await axios.post(`http://localhost:4000/users/${userId}/wishlist/remove`,{userId,product},tokenConfig())
        toast.success(data.message,{
         position: "top-right",
         style: { backgroundColor: "grey",color:"white"},

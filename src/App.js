@@ -1,5 +1,5 @@
 import "./styles.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
 import { ProductList } from "./components/productList";

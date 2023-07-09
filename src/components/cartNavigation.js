@@ -1,7 +1,7 @@
 import { useData } from "../context/Datacontext";
 import { Link } from "react-router-dom";
 export const CartNavigation = () => {
-  const { cartItems, wishList,cartQuantity } = useData();
+  const { cartItems, wishList } = useData();
   return (
     <div>
       <nav class="Nav-Container fixed">
